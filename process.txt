@@ -1,0 +1,33 @@
+https://davidmac.pro/posts/2021-07-21-files-over-mqtt/#solution---python
+
+# Creating python virtual environment
+python3 -m venv ./venv/
+
+# Installing required libraries
+venv/bin/pip3 install rpi-gpio
+venv/bin/pip3 install paho-mqtt
+sudo apt install mosquitto mosquitto-clients -y && sudo systemctl enable mosquitto.service
+
+# I added the above requirements into setup.py. First run setup.py on both devices.
+
+### YOU MUST RUN RECEIVE.PY FIRST AND WAIT RECEIVER DEVICE TO SUBSCRIBE. RUN NUMPAD.PY/SEND.PY ON PUBLISHING DEVICE ONLY THEN ###
+
+### If you reconnect the camera in the middle and it says no camera module found, just reboot before panicking ###
+
+###IMAGE SIZE CONSTRAINT###
+The image should be roughly 50kb to be transmitted via MQTT. So, we had to resize the image captured using imagemagick.
+
+#The capture, resize and automatic sending of image is included in numpad.py
+sudo apt install imagemagick
+convert -resize 10% intruder_captured.jpeg intruder_compressed.jpeg
+
+##Process
+-> Run receive.py on the receiving pi device.
+-> Run numpad.py on the pi device connected to camera and keypad.
+
+-> To check if received image is correct, run receive.py and send.py in alternate devices.
+
+
+
+
+
