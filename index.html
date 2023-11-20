@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TF3WKZS5Q4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-TF3WKZS5Q4');
+    </script>
+
+    <meta charset="utf-8">
+    <title> Intruder Capture System </title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial scale=1">
+    <meta name="description" content="Intruder Capture System using MQTT Protocol">
+    <meta name="author" content="Suchit Reddi">
+</head>
+
+<body>
+    <button><a href="https://suchitreddi.github.io/Work/">Back</a></button><br>
+    <button><a href="https://suchitreddi.github.io/">Home</a></button><br>
+
+    <div class="white-links">
+      <h1>Intruder Capture System - Capture and upload photos on authentication failure [Nov 2023 (1 month)]</h1>
+      <h2>Project</h2>
+      <p>
+        <center><img src="setup.jpeg" alt="Intruder Detection System" width="35%" height="35%"></center>
+        It is an IoT project that authenticates a user with a 4x4 matrix keypad. If a wrong code is entered, the
+        connected camera module captures an image and publishes it to the MQTT broker.<br>
+        The control center receives the uploaded image by subscribing to the broker.<br>
+        We used a Raspberry Pi 4B, a 4x4 matrix keypad and camera module.<br>
+        Find the <a href="docs/presentation.pdf" target="_blank" rel="nofollow noopener noreferrer">presentation</a>,
+        and <a href="/docs/report.pdf" target="_blank" rel="nofollow noopener noreferrer">report</a> here.<br>
+      </p>
+
+      <h3><b>Process:</b></h3>
+      <p>
+        1) Download the repo using "<code>git clone https://github.com/SuchitReddi/ics.git</code>" <br>
+        2) Run "<code>bash setup.sh</code>" <br>
+        3) Run "<code>bash ics.sh</code>" on control center (receiver) first, and then on intruder capture system
+        (authentication device).
+      </p>
+
+      <h3><b>Note:</b></h3>
+      <p>
+        This project is developed on a raspberry pi. So, this is tested on linux. Some of the commands might not work
+        on other operating systems.
+      </p>
+      
+    </div>
+  <button><a href="https://suchitreddi.github.io/Work/">Back</a></button><br>
+  <button><a href="https://suchitreddi.github.io/">Home</a></button><br>
+    
+</body>
+
+</html>
