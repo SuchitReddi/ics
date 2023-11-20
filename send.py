@@ -1,7 +1,12 @@
 import paho.mqtt.client as mqtt
 import os
+import sys
 
 topic = "suchit/image"
+
+# Hide traceback
+sys.tracebacklimit=0
+SHOW_STACK_TRACE=False
 
 def on_connect(client, userdata, flags, rc):
     print(f"Connected with result code {rc}")

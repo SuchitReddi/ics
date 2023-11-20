@@ -1,6 +1,7 @@
 import RPi.GPIO as GPIO
 import time
 import os
+import sys
 
 L1 = 5
 L2 = 6
@@ -11,14 +12,17 @@ C1 = 12
 C2 = 16
 C3 = 20
 C4 = 21
-# If the C-Button is pressed on keypad, the input is reset. If the hits the A-Button, the input is checked.
+
+# Hides long error tracebacks. Comment out if you want to find error causes.
+sys.tracebacklimit=0
+
 # The GPIO pin of the column of the key that is being held down or -1 if no key is pressed
 keypadPressed = -1
 
 print("Please enter your code")
 secretCode = "7897"
-input = ""
-
+#input = ""
+input = "8888"
 # Setup GPIO
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)

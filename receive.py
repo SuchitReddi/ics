@@ -1,7 +1,12 @@
 import paho.mqtt.client as mqtt
 import os
+import sys
 
 topic = "suchit/image"
+
+# Hide traceback
+sys.tracebacklimit=0
+SHOW_STACK_TRACE=False
 
 def on_connect(client, userdata, flags, rc):
     print(f"Connected with result code {rc}")
@@ -9,6 +14,7 @@ def on_connect(client, userdata, flags, rc):
     # If reconnect after losing the connection with the broker, it will continue to subscribe to the suchit/image topic
     client.subscribe(topic)
     print("Subscribed to " + topic)
+    print("Waiting for image...")
 
 # The callback function, it will be triggered when receiving messages
 def on_message(client, userdata, msg):
